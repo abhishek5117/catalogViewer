@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# React: Catalog Viewer
+Complete a partially completed React catalog viewer application. Certain core React functionalities have already been implemented. Complete the application as shown below in order to pass all the unit tests.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+ ### The application has 2 components:
 
-### `npm start`
+- The Viewer component, which displays the selected product in a large size.
+- The Thumbs component, which presents a full list of product thumbnails. The list of images is passed to the Thumbs component.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The application has the following functionalities:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Initially, the catalog displays the first image in the Viewer.
+- Clicking on the previous or next button displays the previous or next image respectively. The thumbnail list is circular:
+   - Clicking the next button when the last image is showing should display the first image.
+    - Clicking the previous button when the first image is showing should display the last image.
+    
+- Clicking on any thumbnail loads the appropriate image in the Viewer.
+- The button with the label Start Slide Show has the following features:
+    - When checked, starts the automatic display of images in the Viewer, beginning with the currently displayed image and cycling to the next every 3 seconds
+    - When unchecked, stops the automatic cycling of images
+    - During cycling, the user can interact as before (click any thumbnail or the next or previous buttons), after which cycling continues from that image
+    
+The following data-testid attributes are required in the component for the tests to pass:
 
-### `npm test`
+- The Viewer component should have the data-testid attribute 'catalog-view'.
+- The previous button should have the data-testid attribute 'prev-slide-btn'.
+- The next button should have the data-testid attribute 'next-slide-btn'.
+- The thumbnail buttons should have the data-testid attributes 'thumb-button-0', 'thumb-button-1', 'thumb-button-2', and 'thumb-button-3'.
+- The "Start Slide Show" checkbox should have the data-testid attribute 'toggle-slide-show-button'.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Please note that the component has the above data-testid attributes for test cases and certain classes and ids for rendering purposes. It is advised not to change them.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Read-Only Files
+src/App.test.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Commands
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- run:
+npm start
 
-### `npm run eject`
+- install:
+ npm install
+ 
+- test:
+npm test
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+react-catalog-viewer/README.md
